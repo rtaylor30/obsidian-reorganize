@@ -1,27 +1,41 @@
 import { Section } from "./enumerations.mjs";
 import { splitOnOccurrence, recursiveMap } from '../util/listRelated.mjs';
-// import { App, Editor, Vault } from "obsidian";
+import { App, Editor, Vault } from "obsidian";
+import { normalizeHeadings } from "./normalizeHeadings.mjs";
 
-// /**
-//  * Summary: To extract out the sections to new notes and then link back to the original.
-//  * Reference: docs/extracting-to-new-notes.md
-//  * 
-//  * @param {number} sectionLevelToExtract Section enumeration
-//  * @param {number} sectionLevelToExtractFrom Section enumeration
-//  */
-// export default async function extractToNewNote(sectionLevelToExtract, sectionLevelToExtractFrom) {
+export const determineCurrentSectionLevel = {
+    andThen: ( sectionLevelFn ) => ( app, editor, vault ) => {
+        const currentSectionLevel = determineLevel( app, editor, vault );
+        return extractToNewNote( currentSectionLevel + 1, currentSectionLevel )( app, editor, vault );
+    }
+}
 
-//     /**
-//      * Summary: Extracts the sections to new notes and then link back to the original.
-//      * 
-//      * @param {App} app Obsidian app
-//      * @param {Editor} editor Obsidian editor
-//      * @param {Vault} vault Obsidian vault
-//      */
-//     return async function( app, editor, vault ) {
+function determineLevel( app, editor, vault ) {
+    // TODO : 
+    // Get current line. Iterate upwards until a heading is reached. Check that level.
+    return 0;
+}
+
+/**
+ * Summary: To extract out the sections to new notes and then link back to the original.
+ * Reference: docs/extracting-to-new-notes.md
+ * 
+ * @param {number} sectionLevelToExtract Section enumeration
+ * @param {number} sectionLevelToExtractFrom Section enumeration
+ */
+export async function extractToNewNote(sectionLevelToExtract, sectionLevelToExtractFrom) {
+
+    /**
+     * Summary: Extracts the sections to new notes and then link back to the original.
+     * 
+     * @param {App} app Obsidian app
+     * @param {Editor} editor Obsidian editor
+     * @param {Vault} vault Obsidian vault
+     */
+    return async function( app, editor, vault ) {
         
-//     }
-// };
+    }
+};
 
 /**
  * Summary: Convert the text into a hierarchy of sections.

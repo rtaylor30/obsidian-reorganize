@@ -25,7 +25,7 @@ Settings
 function testThatSectionsAreProperlyExtracted() {
     const sectionHierarchy = toSectionHierarchy( testData );
     
-    console.log( JSON.stringify( sectionHierarchy, null, 4 ) )
+    // Check the values of the output.
 }
 
 testThatSectionsAreProperlyExtracted()
