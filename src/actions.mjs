@@ -1,4 +1,5 @@
 import { Section } from "refactoring/enumerations.mjs";
+import { extractToNewNote } from "refactoring/extractToNewNote.mjs";
 
 export default [
     {

@@ -1,18 +1,27 @@
 {
-	"name": "obsidian-reorganize",
-	"version": "0.1.0",
-	"description": "A plugin that will help you refactor, split, merge and re-organize your vault just the way you like it. The primary motivation behind this plugin is to make it easy to generate atomic notes without having to leave the flow of you taking your notes.",
-	"main": "src/index.mjs",
-	"scripts": {
-		"dev": "",
-		"build": ""
-	},
-	"keywords": ["obsidian", "refactor", "reorganize", "knowledge graph"],
-	"author": "Robert Taylor",
-	"license": "MIT",
-	"devDependencies": {
-		"builtin-modules": "3.3.0",
-		"esbuild": "0.17.3",
-		"obsidian": "latest"
-	}
+    "name": "obsidian-reorganize",
+    "version": "0.1.0",
+    "description": "A plugin that will help you refactor, split, merge and re-organize your vault just the way you like it. The primary motivation behind this plugin is to make it easy to generate atomic notes without having to leave the flow of you taking your notes.",
+    "main": "src/index.mjs",
+    "scripts": {
+        "dev": "",
+        "build": "",
+        "test": "node test/refactoring/extractToNewNote/basicRefactoringTest.mjs"
+    },
+    "keywords": [
+        "obsidian",
+        "refactor",
+        "reorganize",
+        "knowledge graph"
+    ],
+    "author": "Robert Taylor",
+    "license": "MIT",
+    "dependencies": {
+        "change-case": "^5.4.4"
+    },
+    "devDependencies": {
+        "builtin-modules": "3.3.0",
+        "esbuild": "0.17.3",
+        "obsidian": "latest"
+    }
 }
